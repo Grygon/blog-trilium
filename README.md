@@ -4,3 +4,5 @@ Personal site running off two key backend sources:
 2. [Gatsby](https://www.gatsbyjs.com/) to generate the static site at the blog and non-blog level.
 
 Still very much a WIP, further documentation to come
+
+Blog built using the [basic starter blog](https://github.com/gatsbyjs/gatsby-starter-blog)

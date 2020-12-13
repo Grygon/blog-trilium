@@ -3,24 +3,24 @@ module.exports = {
     title: `Grygon's Site`,
     author: {
       name: `Grygon`,
-      summary: `A person I guess?`,
+      summary: `A Mechanical/Software/Technical Engineer tinkering his way through the world`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A barebones personal site`,
     siteUrl: `https://www.grygon.com`
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `./content/blog`,
         name: `blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        path: `./content/images`,
+        name: `images`
       },
     },
     {
@@ -54,6 +54,8 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
+    // Re-enable for a feed
+    /**
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -63,12 +65,12 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        display: `minimal-ui`
       },
-    },
+    }, */
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-catch-links`
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-styled-components`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -251,7 +251,7 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--spacing-4);
 }
 
 .main-heading {
@@ -330,4 +330,29 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+}
+
+
+/* Navigation Buttons */
+.navBarButton {
+  font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: .1rem;
+  padding-left: .2rem;
+  padding-right: .2rem;
+}
+
+.navBarButton:hover {
+  font-size: 1.1rem;
+  padding: 0;
+  color: #8d1e1a;
+}
+
+.githubFooter {
+  width: 24px;
+  float: right;
 }

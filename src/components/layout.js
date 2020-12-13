@@ -1,7 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, StaticQuery } from "gatsby"
 
-const Layout = ({ location, title, children }) => {
+import styled from "styled-components"
+
+import Img from "gatsby-image"
+
+const TopNavBar = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`
+
+const Layout = ({ location, title, children, data }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
@@ -20,14 +29,44 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
+  let navBarContent = {
+    Contact: "/contact",
+    Blog: "/blog",
+    '3rd thing': "/"
+  }
+
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
+      <TopNavBar>
+        {Object.keys(navBarContent).map(key => {
+          return (<Link to={navBarContent[key]} className="navBarButton">{key}</Link>)
+        })}
+      </TopNavBar>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <StaticQuery
+        query={graphql`
+          query {
+            fileName: file(relativePath: { eq: "GitHub-Mark-64px.png" }) {
+              childImageSharp {
+                fluid(maxWidth:24) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <Link to="https://github.com/Grygon/blog-trilium">
+            <Img fluid={data.fileName.childImageSharp.fluid} className="githubFooter" alt="Source"/>
+          </Link>
+          )
+        }
+      />
       </footer>
     </div>
   )

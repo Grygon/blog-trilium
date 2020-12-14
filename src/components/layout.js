@@ -32,7 +32,7 @@ const Layout = ({ location, title, children, data }) => {
   let navBarContent = {
     Contact: "/contact",
     Blog: "/blog",
-    '3rd thing': "/"
+    Projects: "/projects"
   }
 
   return (
@@ -61,9 +61,9 @@ const Layout = ({ location, title, children, data }) => {
           }
         `}
         render={data => (
-          <Link to="https://github.com/Grygon/blog-trilium">
+          <a href="https://github.com/Grygon/blog-trilium">
             <Img fluid={data.fileName.childImageSharp.fluid} className="githubFooter" alt="Source"/>
-          </Link>
+          </a>
           )
         }
       />

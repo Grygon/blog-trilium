@@ -1,3 +1,9 @@
+// Primary theme-wide variables
+$primary-color: #8d1e1a;
+
+
+
+
 /* CSS Custom Properties Definitions */
 
 :root {
@@ -349,7 +355,7 @@ a:focus {
 .navBarButton:hover {
   font-size: 1.1rem;
   padding: 0;
-  color: #8d1e1a;
+  color: $primary-color;
 }
 
 .githubFooter {
